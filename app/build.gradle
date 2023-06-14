@@ -1,0 +1,26 @@
+
+plugins {
+    // Apply the application plugin to add support for building a CLI application in Java.
+    id 'java'
+}
+
+sourceCompatibility = 11
+
+repositories {
+    // Use Maven Central for resolving dependencies.
+    mavenCentral()
+}
+
+dependencies {
+    
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    implementation group: 'io.cucumber', name: 'cucumber-java', version: '4.2.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '4.2.0'
+}
+
+test {
+    systemProperty "cucumber.options", System.getProperty("cucumber.options")
+}
