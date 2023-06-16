@@ -30,5 +30,11 @@ public class GooglePage extends BasePage {
     public String firstResult() {
       return textFromElement(firstResult);
     }
+
+    //* Para cerrar el navegador
+    public static void closeBrowser() {
+    driver.quit();
+    }
+
   
   }
